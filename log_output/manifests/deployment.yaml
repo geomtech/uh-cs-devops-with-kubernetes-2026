@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -13,5 +14,23 @@ spec:
         app: log-output
     spec:
       containers:
-        - name: log-output
-          image: log_output:1.7
+        - name: writer
+          image: log_output:1.10
+          imagePullPolicy: IfNotPresent
+          command: ["python", "-u", "writer.py"]
+          volumeMounts:
+            - name: shared-data
+              mountPath: /data
+
+        - name: reader
+          image: log_output:1.10
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: shared-data
+              mountPath: /data
+
+      volumes:
+        - name: shared-data
+          emptyDir: {}

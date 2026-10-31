@@ -1,7 +1,7 @@
-
 FROM python:3.15.2-slim
 
 WORKDIR /app
-COPY main.py .
 
-CMD ["python", "-u", "main.py"]
+COPY writer.py reader.py ./
+
+CMD ["python", "-u", "reader.py"]
