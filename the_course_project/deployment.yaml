@@ -1,0 +1,24 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: the-course-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: the-course-project
+  template:
+    metadata:
+      labels:
+        app: the-course-project
+    spec:
+      containers:
+        - name: the-course-project
+          image: the-course-project:1.2
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
