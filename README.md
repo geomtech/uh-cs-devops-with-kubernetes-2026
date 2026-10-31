@@ -12,3 +12,4 @@
 - [1.6](https://github.com/geomtech/uh-cs-devops-with-kubernetes-2026/tree/1.6/the_course_project)
 - [1.7](https://github.com/geomtech/uh-cs-devops-with-kubernetes-2026/tree/1.7/log_output)
 - [1.8](https://github.com/geomtech/uh-cs-devops-with-kubernetes-2026/tree/1.8/the_course_project)
+- [1.9](https://github.com/geomtech/uh-cs-devops-with-kubernetes-2026/tree/1.9/ping_pong)
